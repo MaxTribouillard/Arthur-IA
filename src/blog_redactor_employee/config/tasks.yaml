@@ -1,0 +1,24 @@
+---
+recherche_et_redaction:
+  description: |-
+    1. Utilise ton outil de recherche pour identifier un sujet chaud, une tendance ou une problématique récurrente cette semaine dans le domaine des outils SaaS et de l'automatisation de productivité.
+
+    2. Choisis un angle d'attaque original et rédige un article de blog complet d'environ 1000 mots.
+    3. L'article doit obligatoirement inclure : une introduction avec une accroche forte, un corps de texte divisé en 3 sections claires (avec des sous-titres H2 et H3), et une conclusion percutante.
+  expected_output: 'L''article complet rédigé exclusivement au format Markdown, prêt
+    à être publié, sans aucun texte d''introduction de ta part (commence directement
+    au titre #).'
+  agent: redacteur_web_expert_seo
+  async_execution: true
+revue_et_publication:
+  description: Prends le texte Markdown généré lors de la tâche précédente. Relis-le
+    attentivement pour corriger les éventuelles coquilles, optimiser le rythme des
+    phrases et t'assurer que le style est fluide. Si l'article est de qualité professionnelle,
+    utilise ton outil de publication pour l'envoyer directement sur le site en statut
+    'brouillon' (draft).
+  expected_output: 'Un court rapport confirmant le statut de la publication (ex: ''Article
+    mis en brouillon avec succès'') accompagné de l''URL ou de l''identifiant du post
+    généré.'
+  agent: redacteur_en_chef_et_responsable_qualite
+  context:
+  - recherche_et_redaction

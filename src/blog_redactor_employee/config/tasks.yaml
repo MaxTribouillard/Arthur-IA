@@ -1,24 +1,167 @@
----
 recherche_et_redaction:
-  description: |-
-    1. Utilise ton outil de recherche pour identifier un sujet chaud, une tendance ou une problématique récurrente cette semaine dans le domaine des outils SaaS et de l'automatisation de productivité.
+description: |-
+  Ta mission est de produire un article de blog original, pertinent et à forte valeur ajoutée destiné à un public de dirigeants, responsables métiers, entrepreneurs et professionnels du numérique.
 
-    2. Choisis un angle d'attaque original et rédige un article de blog complet d'environ 1000 mots.
-    3. L'article doit obligatoirement inclure : une introduction avec une accroche forte, un corps de texte divisé en 3 sections claires (avec des sous-titres H2 et H3), et une conclusion percutante.
-  expected_output: 'L''article complet rédigé exclusivement au format Markdown, prêt
-    à être publié, sans aucun texte d''introduction de ta part (commence directement
-    au titre #).'
-  agent: redacteur_web_expert_seo
-  async_execution: true
+  ```
+  Étape 1 : Recherche
+
+  - Analyse les actualités récentes, les discussions professionnelles, les nouvelles tendances, les innovations émergentes, les problématiques récurrentes ou les controverses dans l'univers :
+    - des outils SaaS
+    - de l'automatisation
+    - de l'intelligence artificielle
+    - de la productivité en entreprise
+    - des agents IA
+    - des workflows automatisés
+
+  - Identifie un sujet intéressant ayant un véritable impact business.
+
+  - Évite les sujets génériques déjà largement traités.
+
+  - Si plusieurs sujets sont pertinents, sélectionne celui qui présente le plus fort potentiel de valeur pour le lecteur.
+
+  Étape 2 : Choix de l'angle
+
+  Choisis un angle éditorial unique parmi les catégories suivantes :
+
+  - Analyse de tendance
+  - Étude de cas
+  - Guide pratique
+  - Comparatif d'outils
+  - Erreurs fréquentes
+  - Retour d'expérience
+  - Prédictions du marché
+  - Décryptage d'une innovation
+  - Analyse d'un problème métier
+  - Opinion argumentée
+
+  Ne réutilise pas systématiquement le même angle.
+
+  Étape 3 : Rédaction
+
+  Rédige un article approfondi de 1000 à 1500 mots.
+
+  Le contenu doit :
+
+  - être rédigé intégralement en français
+  - être professionnel mais accessible
+  - apporter une réelle valeur au lecteur
+  - inclure des exemples concrets
+  - inclure des cas d'usage réels lorsque c'est pertinent
+  - éviter les phrases creuses et les généralités
+  - éviter les répétitions
+  - privilégier l'analyse plutôt que la simple description
+
+  Structure obligatoire :
+
+  - Titre principal H1
+  - Introduction avec une accroche forte
+  - 3 à 5 sections principales en H2
+  - Sous-sections en H3 lorsque nécessaire
+  - Conclusion avec ouverture ou recommandation
+
+  Optimisation SEO :
+
+  - Utiliser naturellement les mots-clés liés au sujet
+  - Intégrer des variantes sémantiques
+  - Créer des titres descriptifs
+  - Éviter le bourrage de mots-clés
+
+  Règle importante :
+
+  Si le sujet semble similaire à un sujet déjà traité récemment, trouve obligatoirement un nouvel angle ou un nouveau point de vue afin d'éviter la production répétitive.
+  ```
+
+expected_output: >
+  Un article de blog complet, original et prêt à publier,
+  rédigé exclusivement en Markdown.
+  Commence directement par le titre principal (#).
+  N'ajoute aucun commentaire, explication ou texte hors article.
+  Le contenu doit être suffisamment varié pour qu'un lecteur ne puisse pas
+  confondre deux articles générés à des dates différentes.
+
+agent: redacteur_web_expert_seo
+
+async_execution: true
+
 revue_et_publication:
-  description: Prends le texte Markdown généré lors de la tâche précédente. Relis-le
-    attentivement pour corriger les éventuelles coquilles, optimiser le rythme des
-    phrases et t'assurer que le style est fluide. Si l'article est de qualité professionnelle,
-    utilise ton outil de publication pour l'envoyer directement sur le site en statut
-    'brouillon' (draft).
-  expected_output: 'Un court rapport confirmant le statut de la publication (ex: ''Article
-    mis en brouillon avec succès'') accompagné de l''URL ou de l''identifiant du post
-    généré.'
-  agent: redacteur_en_chef_et_responsable_qualite
-  context:
-  - recherche_et_redaction
+description: |-
+  Tu es le rédacteur en chef et responsable qualité.
+
+  Ton rôle est de préparer un article pour sa publication finale.
+
+  ÉTAPE 1 : Contrôle qualité
+
+  Analyse l'article reçu en contexte et vérifie :
+
+  - la qualité rédactionnelle
+  - la cohérence globale
+  - l'absence de répétitions excessives
+  - l'absence de fautes majeures
+  - la logique des sections
+  - la qualité des titres
+  - la fluidité de lecture
+
+  Corrige automatiquement les problèmes détectés.
+
+  ÉTAPE 2 : Conversion HTML
+
+  Convertis ensuite l'intégralité de l'article en HTML propre, valide et prêt à être intégré dans un CMS.
+
+  Règles obligatoires :
+
+  - Ne jamais utiliser de syntaxe Markdown
+  - Ne jamais conserver les caractères '#', '##', '###', '**', '`'
+  - Utiliser exclusivement du HTML valide
+
+  Structure attendue :
+
+  - <h1> pour le titre principal
+  - <h2 class="section-title"> pour les sections principales
+  - <h3> pour les sous-sections
+  - <p> pour chaque paragraphe
+  - <ul> et <li> pour les listes
+  - <strong> pour les éléments importants
+
+  Le HTML produit doit être propre, lisible et correctement indenté.
+
+  ÉTAPE 3 : Génération du fichier
+
+  Détermine un nom de fichier SEO-friendly à partir du titre.
+
+  Exemple :
+
+  "Les agents IA révolutionnent le SaaS"
+
+  devient :
+
+  "agents-ia-revolutionnent-saas.html"
+
+  Utilise ensuite le Write File Tool afin de créer le fichier HTML.
+
+  ÉTAPE 4 : Publication
+
+  Une fois le fichier créé :
+
+  - Vérifie que le contenu a bien été généré
+  - Utilise le SFTP Upload Tool
+  - Envoie le fichier sur le serveur distant
+
+  ÉTAPE 5 : Vérification finale
+
+  Confirme :
+
+  - le nom du fichier généré
+  - le nombre approximatif de mots
+  - le statut de création du fichier
+  - le statut de l'upload SFTP
+
+expected_output: >
+  Un rapport final de publication contenant :
+  - le titre de l'article,
+  - le nom du fichier HTML généré,
+  - la confirmation de création locale,
+  - la confirmation d'upload SFTP,
+  - le statut final de publication.
+agent: redacteur_en_chef_et_responsable_qualite
+context:
+- recherche_et_redaction

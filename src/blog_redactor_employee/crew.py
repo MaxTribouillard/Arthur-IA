@@ -6,6 +6,7 @@ from crewai.project import CrewBase, agent, crew, task
 from crewai_tools import (
 	SerperDevTool
 )
+from blog_redactor_employee.tools.custom_tool import SFTPUploadTool, WriteFileTool
 
 
 from pydantic import BaseModel
@@ -28,7 +29,7 @@ class BlogRedactorEmployeeCrew:
             config=self.agents_config["redacteur_web_expert_seo"],
             
             
-            tools=[				SerperDevTool(search_url="macron")],
+            tools=[				SerperDevTool()],
             reasoning=False,
             max_reasoning_attempts=None,
             inject_date=True,
@@ -51,7 +52,7 @@ class BlogRedactorEmployeeCrew:
             config=self.agents_config["redacteur_en_chef_et_responsable_qualite"],
             
             
-            tools=[],
+            tools=[WriteFileTool(), SFTPUploadTool()],
             reasoning=False,
             max_reasoning_attempts=None,
             inject_date=True,
@@ -81,7 +82,8 @@ class BlogRedactorEmployeeCrew:
     def revue_et_publication(self) -> Task:
         return Task(
             config=self.tasks_config["revue_et_publication"],
-            markdown=False,
+            markdown=True,
+            output_file="article.md"
             
             
         )

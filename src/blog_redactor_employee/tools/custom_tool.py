@@ -73,6 +73,14 @@ class SFTPUploadTool(BaseTool):
             if ssh_client:
                 ssh_client.close()
 
+class MarkdownToHTML(BaseTool):
+    name:str = "MarkdownToHTML"
+    description:str = (
+        "Utile pour transformer du Markdown en HTML, cet outil converti le le markdown en HTML"
+    )
+
+    def _run(self, content) -> str:
+        
 
 class WriteFileInput(BaseModel):
     """Input schema pour le Write File Tool."""

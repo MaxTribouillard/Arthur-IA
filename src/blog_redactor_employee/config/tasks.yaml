@@ -1,167 +1,125 @@
 recherche_et_redaction:
-description: |-
-  Ta mission est de produire un article de blog original, pertinent et à forte valeur ajoutée destiné à un public de dirigeants, responsables métiers, entrepreneurs et professionnels du numérique.
+  description: |-
+    Ta mission est de produire un article de blog original, pertinent et à forte valeur ajoutée destiné à un public de dirigeants, responsables métiers, entrepreneurs et professionnels du numérique.
 
-  ```
-  Étape 1 : Recherche
+    ```
+    Étape 1 : Recherche
 
-  - Analyse les actualités récentes, les discussions professionnelles, les nouvelles tendances, les innovations émergentes, les problématiques récurrentes ou les controverses dans l'univers :
-    - des outils SaaS
-    - de l'automatisation
-    - de l'intelligence artificielle
-    - de la productivité en entreprise
-    - des agents IA
-    - des workflows automatisés
+    - Analyse les actualités récentes, les discussions professionnelles, les nouvelles tendances, les innovations émergentes, les problématiques récurrentes ou les controverses dans l'univers :
+      - des outils SaaS
+      - de l'automatisation
+      - de l'intelligence artificielle
+      - de la productivité en entreprise
+      - des agents IA
+      - des workflows automatisés
 
-  - Identifie un sujet intéressant ayant un véritable impact business.
+    - Identifie un sujet intéressant ayant un véritable impact business.
 
-  - Évite les sujets génériques déjà largement traités.
+    - Évite les sujets génériques déjà largement traités.
 
-  - Si plusieurs sujets sont pertinents, sélectionne celui qui présente le plus fort potentiel de valeur pour le lecteur.
+    - Si plusieurs sujets sont pertinents, sélectionne celui qui présente le plus fort potentiel de valeur pour le lecteur.
 
-  Étape 2 : Choix de l'angle
+    Étape 2 : Choix de l'angle
 
-  Choisis un angle éditorial unique parmi les catégories suivantes :
+    Choisis un angle éditorial unique parmi les catégories suivantes :
 
-  - Analyse de tendance
-  - Étude de cas
-  - Guide pratique
-  - Comparatif d'outils
-  - Erreurs fréquentes
-  - Retour d'expérience
-  - Prédictions du marché
-  - Décryptage d'une innovation
-  - Analyse d'un problème métier
-  - Opinion argumentée
+    - Analyse de tendance
+    - Étude de cas
+    - Guide pratique
+    - Comparatif d'outils
+    - Erreurs fréquentes
+    - Retour d'expérience
+    - Prédictions du marché
+    - Décryptage d'une innovation
+    - Analyse d'un problème métier
+    - Opinion argumentée
 
-  Ne réutilise pas systématiquement le même angle.
+    Ne réutilise pas systématiquement le même angle.
 
-  Étape 3 : Rédaction
+    Étape 3 : Rédaction
 
-  Rédige un article approfondi de 1000 à 1500 mots.
+    Rédige un article approfondi de 1000 à 1500 mots.
 
-  Le contenu doit :
+    Le contenu doit :
 
-  - être rédigé intégralement en français
-  - être professionnel mais accessible
-  - apporter une réelle valeur au lecteur
-  - inclure des exemples concrets
-  - inclure des cas d'usage réels lorsque c'est pertinent
-  - éviter les phrases creuses et les généralités
-  - éviter les répétitions
-  - privilégier l'analyse plutôt que la simple description
+    - être rédigé intégralement en français
+    - être professionnel mais accessible
+    - apporter une réelle valeur au lecteur
+    - inclure des exemples concrets
+    - inclure des cas d'usage réels lorsque c'est pertinent
+    - éviter les phrases creuses et les généralités
+    - éviter les répétitions
+    - privilégier l'analyse plutôt que la simple description
 
-  Structure obligatoire :
+    Optimisation SEO :
 
-  - Titre principal H1
-  - Introduction avec une accroche forte
-  - 3 à 5 sections principales en H2
-  - Sous-sections en H3 lorsque nécessaire
-  - Conclusion avec ouverture ou recommandation
+    - Utiliser naturellement les mots-clés liés au sujet
+    - Intégrer des variantes sémantiques
+    - Créer des titres descriptifs
+    - Éviter le bourrage de mots-clés
 
-  Optimisation SEO :
+    Règle importante :
 
-  - Utiliser naturellement les mots-clés liés au sujet
-  - Intégrer des variantes sémantiques
-  - Créer des titres descriptifs
-  - Éviter le bourrage de mots-clés
+    Si le sujet semble similaire à un sujet déjà traité récemment, trouve obligatoirement un nouvel angle ou un nouveau point de vue afin d'éviter la production répétitive.
+    ```
 
-  Règle importante :
+  expected_output: >
+    Un article de blog complet, original et prêt à publier,
+    rédigé exclusivement en Markdown.
+    Commence directement par le titre principal (#).
+    N'ajoute aucun commentaire, explication ou texte hors article.
+    Le contenu doit être suffisamment varié pour qu'un lecteur ne puisse pas
+    confondre deux articles générés à des dates différentes.
 
-  Si le sujet semble similaire à un sujet déjà traité récemment, trouve obligatoirement un nouvel angle ou un nouveau point de vue afin d'éviter la production répétitive.
-  ```
+  agent: redacteur_web_expert_seo
 
-expected_output: >
-  Un article de blog complet, original et prêt à publier,
-  rédigé exclusivement en Markdown.
-  Commence directement par le titre principal (#).
-  N'ajoute aucun commentaire, explication ou texte hors article.
-  Le contenu doit être suffisamment varié pour qu'un lecteur ne puisse pas
-  confondre deux articles générés à des dates différentes.
+  async_execution: true
 
-agent: redacteur_web_expert_seo
+controle_qualite_et_edition:
+  description: |-
+    Tu es l'Éditeur et Responsable Qualité Éditoriale. Ton rôle est de prendre l'article brut et de le rendre parfait pour la publication.
+    
+    1. Analyse l'article reçu dans le contexte 'recherche_et_redaction'.
+    2. Corrige les fautes d'orthographe, de grammaire et de syntaxe.
+    3. Améliore la fluidité, élimine les répétitions excessives et renforce l'impact des titres.
+    4. Assure-toi que la structure logique (sections, sous-sections) soit cohérente.
+    
+    Renvoie uniquement le texte corrigé et restructuré en Markdown propre.
+  expected_output: "L'article entièrement révisé, corrigé et structuré en Markdown."
+  agent: responsable_qualite_editorial
+  context:
+    - recherche_et_redaction
 
-async_execution: true
+conversion_html_et_seo:
+  description: |-
+    Tu es l'Intégrateur Web et DevOps. Ton rôle est de formater techniquement l'article révisé.
+    
+    1. Récupère l'article corrigé depuis la tâche 'controle_qualite_et_edition'.
+    2. Convertis-le en HTML propre et sémantique en utilisant exclusivement :
+       - <h1 class='section-title'> pour le titre principal
+       - <h2> et <h3> pour les sections
+       - <p> pour les paragraphes
+       - <ul>, <li> et <strong> pour le style et les listes
+    3. Génère un nom de fichier SEO-friendly (slug) basé sur le titre (ex: "Mon bel article" -> "mon-bel-article.html").
+    4. Utilise le [Write File Tool] pour créer le fichier HTML localement.
+  expected_output: "Le nom du fichier HTML généré et la confirmation de sa création locale avec le code HTML propre."
+  agent: integrateur_web_devops
+  context:
+    - controle_qualite_et_edition
 
-revue_et_publication:
-description: |-
-  Tu es le rédacteur en chef et responsable qualité.
+    deploiement_sftp:
+  description: |-
+    Tu es l'Intégrateur Web et DevOps. Tu t'occupes de la mise en production.
+    
+    1. Reprends le fichier généré à la tâche 'conversion_html_et_seo'.
+    2. Utilise le [SFTP Upload Tool] pour envoyer ce fichier HTML sur le serveur distant.
+    3. Vérifie le statut du transfert et génère le rapport final.
+  expected_output: |-
+    Un rapport de déploiement contenant :
+    - Le nom du fichier envoyé
+    - Le statut du transfert SFTP
+    - Le statut final de publication (Succès/Échec)
+  agent: integrateur_web_devops
+  context:
+    - conversion_html_et_seo
 
-  Ton rôle est de préparer un article pour sa publication finale.
-
-  ÉTAPE 1 : Contrôle qualité
-
-  Analyse l'article reçu en contexte et vérifie :
-
-  - la qualité rédactionnelle
-  - la cohérence globale
-  - l'absence de répétitions excessives
-  - l'absence de fautes majeures
-  - la logique des sections
-  - la qualité des titres
-  - la fluidité de lecture
-
-  Corrige automatiquement les problèmes détectés.
-
-  ÉTAPE 2 : Conversion HTML
-
-  Convertis ensuite l'intégralité de l'article en HTML propre, valide et prêt à être intégré dans un CMS.
-
-  Règles obligatoires :
-
-  - Ne jamais utiliser de syntaxe Markdown
-  - Ne jamais conserver les caractères '#', '##', '###', '**', '`'
-  - Utiliser exclusivement du HTML valide
-
-  Structure attendue :
-
-  - <h1> pour le titre principal
-  - <h2 class="section-title"> pour les sections principales
-  - <h3> pour les sous-sections
-  - <p> pour chaque paragraphe
-  - <ul> et <li> pour les listes
-  - <strong> pour les éléments importants
-
-  Le HTML produit doit être propre, lisible et correctement indenté.
-
-  ÉTAPE 3 : Génération du fichier
-
-  Détermine un nom de fichier SEO-friendly à partir du titre.
-
-  Exemple :
-
-  "Les agents IA révolutionnent le SaaS"
-
-  devient :
-
-  "agents-ia-revolutionnent-saas.html"
-
-  Utilise ensuite le Write File Tool afin de créer le fichier HTML.
-
-  ÉTAPE 4 : Publication
-
-  Une fois le fichier créé :
-
-  - Vérifie que le contenu a bien été généré
-  - Utilise le SFTP Upload Tool
-  - Envoie le fichier sur le serveur distant
-
-  ÉTAPE 5 : Vérification finale
-
-  Confirme :
-
-  - le nom du fichier généré
-  - le nombre approximatif de mots
-  - le statut de création du fichier
-  - le statut de l'upload SFTP
-
-expected_output: >
-  Un rapport final de publication contenant :
-  - le titre de l'article,
-  - le nom du fichier HTML généré,
-  - la confirmation de création locale,
-  - la confirmation d'upload SFTP,
-  - le statut final de publication.
-agent: redacteur_en_chef_et_responsable_qualite
-context:
-- recherche_et_redaction
